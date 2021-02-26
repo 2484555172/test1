@@ -1,159 +1,137 @@
 #define _CRT_SECURE_NO_WARNINGS 
 
 #include <stdio.h>
+#include <string.h>
 
-void swap(int* arr, int x, int y)
+
+int main(void)
 {
-	int tem = 0;
-	tem = arr[x];
-	arr[x] = arr[y];
-	arr[y] = tem;
+	return 0;
 }
 
 
-/*          ±º‰∏¥‘”∂»(ave)       Œ»∂®–‘
-—°‘Ò≈≈–Ú		n*n					0
-√∞≈›≈≈–Ú		n*n				     1
-≤Â»Î≈≈–Ú*	n*n                   1
-  ∂—≈≈–Ú*    n*log2n               0
-œ£∂˚≈≈–Ú		n~1.3				0
-πÈ≤¢≈≈–Ú*    n*log2n               0
-øÏÀŸ≈≈–Ú*    n*log2n			    1
-  Õ∞≈≈–Ú		n+k					1
-º∆ ˝≈≈–Ú		n+k					1
-ª˘ ˝≈≈–Ú		n*k					1
-*/
 
-
-
-//—°‘Ò≈≈–Ú
-
-//#define N 5
+//void K_fen(int a)
+//{
+//	int i, j, k, l, m, n;
+//	i = 0; j = 0; k = 0;
+//	l = 0; m = 0; n = 0;
+//	i = a % 10;
+//	j = a / 10;
+//	k = j % 10;
+//	l = j / 10;
+//	m = l % 10;
+//	n = a / 1000;
+//	printf("%d %d %d %d", n, m, k, i);
+//}
+//
 //int main(void)
 //{
-//	int minpos = 0;
+//	int a;
+//	scanf("%d", &a);
+//	K_fen(a);
+//	return 0;
+//}
+
+
+
+//int yuanyin(char a[], char b[])
+//{
+//	int i, j = 0, k, l;
+//	char x;
+//	l = strlen(a);
+//	for (i = 0; i < l; i++)
+//	{
+//		if (a[i] == 'a' || a[i] == 'e' || a[i] == 'i' || a[i] == 'o' || a[i] == 'u')
+//		{
+//			b[j] = a[i];
+//			j++;
+//		}
+//	}
+//	b[j] = '\0';
+//	k = strlen(b);
+//	for (i = 0; i < k; i++)
+//	{
+//		for (j = i; j < k; j++)
+//		{
+//			if (b[i] > b[j])
+//			{
+//				x = b[j]; b[j] = b[i]; b[i] = x;
+//			}
+//		}
+//	}
+//	return 0;
+//}
+//int main(void)
+//{
+//	char a[100], b[100];
+//	gets(a);
+//	yuanyin(a, b);
+//	puts(b);
+//	return 0;
+//}
+
+//#define N 3
+//int main(void)
+////{
+//	int arr[N][N];
 //	int tem = 0;
-//	int arr[N] = {5,4,2,1,3};
 //	for (int i = 0; i < N; i++)
 //	{
-//		 minpos = i;
-//		for (int j = i+1; j < N; j++)
+//		for (int j = 0; j < N; j++)
 //		{
-//			if (arr[j] < arr[minpos])
-//			{
-//				minpos = j;
-//			}
+//			scanf("%d", &arr[i][j]);
 //		}
-//		tem = arr[i];
-//		arr[i] = arr[minpos];
-//		arr[minpos] = tem;
-//	}
-//	for (int i = 0; i < 5; i++)
-//	{
-//		printf("%2d", arr[i]);
-//	}
-//	return 0;
-//}
-
-//√∞≈›≈≈–Ú
-
-//#define N  9
-//int main(void)
-//{
-//	int arr[N] = { 9,6,1,3,5,2,4,8,7 };
-//	for (int i = 0; i < N - 1; i++)
-//	{
-//		for (int j = 0; j < N - 1; j++)
-//		{
-//			if (arr[j] > arr[j + 1])
-//				swap(arr, j, j + 1);
-//		}
-//		
 //	}
 //	for (int i = 0; i < N; i++)
 //	{
-//		printf("%d ", arr[i]);
-//	}
-//	return 0;
-//}
-
-//≤Â»Î≈≈–Ú
-
-//#define N 5
-//int main(void)
-//{
-//	int arr[N] = { 9,6,1,3,5 };
-//	for (int i = 1; i < N; i++)
-//	{
-//		for (int j = i; j > 0; j--)
+//		for (int j = 0; j < N; j++)
 //		{
-//			if (arr[j] < arr[j - 1])
-//				swap(arr, j, j - 1);
-//		}
-//	}
-//   for (int i = 0; i < N; i++)
-//	{
-//		printf("%d ", arr[i]);
-//	}
-//	return 0;
-//}
-
-//œ£∂˚≈≈–Ú
-//#define N 15
-//int main(void)
-//{
-//	int arr[N] = { 9,6,11,3,5,12,8,7,10,15,14,4,1,13,2 };
-//	
-//	for (int h = N>>1; h > 0; h /= 2)
-//	{
-//		for (int i = h; i < N; i++)
-//		{
-//			for (int j = i; j > h - 1; j -= h)
+//			if ((i + j == 1 || i + j == 2 || i + j == 3) && i != j)
 //			{
-//				if (arr[j] < arr[j - h])
-//					swap(arr, j, j - h);
+//				tem = arr[i][j];
+//				arr[i][j] = arr[j][i];
+//				arr[j][i] = tem;
 //			}
 //		}
 //	}
-//    for (int i = 0; i < N; i++)
+//	for (int i = 0; i < N; i++)
 //	{
-//		printf("%d ", arr[i]);
+//		for (int j = 0; j < N; j++)
+//		{
+//			printf("%d ", arr[j][i]);
+//		}
+//		printf("\n");
 //	}
+//
 //	return 0;
 //}
 
-//πÈ≤¢≈≈–Ú
-//#define N 10
-//#define M 15
+
+//void Is_prime(int n)
+//{
+//	int a = 0;
+//	for (int i = 2; i < n; i++)
+//	{
+//		if (n%i == 0)
+//		{
+//			a++;
+//		}
+//	}
+//	if (a == 0)
+//	{
+//		printf("prime");
+//	}
+//	else
+//	{
+//		printf("not prime");
+//	}
+//}
+//
 //int main(void)
 //{
-//	int arr[N] = { 1,4,6,7,10,2,3,5,8,9 };
-//	int arr1[M];
-//	int i = 0;
-//	int j = N/2;
-//	int k = 0;
-//	while (i <= N/2 && j < N)
-//	{
-//		if (arr[i] <= arr[j])
-//		{
-//			arr1[k++] = arr[i++];
-//		}
-//		else
-//		{
-//			arr1[k++] = arr[j++];		
-//		}
-//	}
-//	while (i <= N/2)
-//	{
-//		arr1[k++] = arr[i++];
-//	}
-//	while (j < N)
-//	{
-//		arr[k++] = arr[j++];
-//	}
-//	for (int i = 0; i < N; i++)
-//	{
-//		printf("%d ", arr1[i]);
-//	}
+//	int n;
+//	scanf("%d", &n);
+//	Is_prime(n);
 //	return 0;
 //}
